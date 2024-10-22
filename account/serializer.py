@@ -5,3 +5,9 @@ from django.contrib.auth import authenticate
 class RegisterSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(max_length=50)
     last_name = serializers.CharField(max_length=50)
+
+
+
+
+
+
