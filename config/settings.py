@@ -9,11 +9,9 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-from distutils.command.config import config
+from decouple import config
 from pathlib import Path
 
-from django.conf.global_settings import STATIC_ROOT, MEDIA_URL, MEDIA_ROOT
-from django.template.context_processors import media
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,9 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #installed_apps
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken',
 
     #my_apps
+    'account',
+    
 ]
 
 MIDDLEWARE = [
