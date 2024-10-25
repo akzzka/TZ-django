@@ -1,4 +1,4 @@
-#!/Users/ergeshovjr/Desktop/ADA-TZ/venv/bin/python3
+#!/Users/ergeshovjr/Desktop/TZ-django/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

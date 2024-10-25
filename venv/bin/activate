@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/ergeshovjr/Desktop/ADA-TZ/venv"
+VIRTUAL_ENV="/Users/ergeshovjr/Desktop/TZ-django/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
