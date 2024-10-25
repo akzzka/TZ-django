@@ -1,13 +1,12 @@
 from django.db import models
+from artist.models import Artist
+from genre.models import Genre
 
 class Song(models.Model):
     title = models.CharField(max_length=100)
-    artist = models.CharField(max_length=100)
-    album = models.CharField(max_length=100, blank=True)
+    artist = models.ForeignKey(Artist, related_name='songs', on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, related_name='songs', on_delete=models.CASCADE)
     release_date = models.DateField()
-    genre = models.CharField(max_length=50, blank=True)
-    audio_file = models.FileField(upload_to='song/')
 
-    def __str__(self) -> str:
-        return f'{self.title}, {self.artist}'
-    
+    def __str__(self):
+        return self.title

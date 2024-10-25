@@ -9,7 +9,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
     path('artist/', include('artist.urls')),
-    path('', include('genre.urls')),
+    path('genre/', include('genre.urls')),
+     path('songs/', include('songs.urls')),
 
 ]
 
