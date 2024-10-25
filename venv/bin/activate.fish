@@ -29,7 +29,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/ergeshovjr/Desktop/ADA-TZ/venv"
+set -gx VIRTUAL_ENV "/Users/ergeshovjr/Desktop/TZ-django/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
