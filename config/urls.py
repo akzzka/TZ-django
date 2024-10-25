@@ -8,6 +8,7 @@ from config import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
+    path('artist/', include('artist.urls')),
     path('', include('genre.urls')),
 
 ]

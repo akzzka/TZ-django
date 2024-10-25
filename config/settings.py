@@ -31,10 +31,10 @@ INSTALLED_APPS = [
 
     #my_apps
     'account',
+    'artist',
     'comment',
     'songs',
     'genre',
-    
     
 ]
 
