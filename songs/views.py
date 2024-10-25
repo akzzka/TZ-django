@@ -1,14 +1,11 @@
-from django.shortcuts import render, redirect
-from .forms import SongForm
+from rest_framework import generics
+from .models import Song
+from .serializers import SongSerializer
 
-def add_song(request):
-    if request.method == 'POST':
-        form = SongForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('some_view_name')
-    else:
-        form = SongForm()
+class SongListCreate(generics.ListCreateAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
 
-    return render(request, '')
-
+class SongDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
