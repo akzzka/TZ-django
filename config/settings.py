@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'artist',
     'comment',
     'songs',
+    'genre',
     
 ]
 
@@ -102,6 +103,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+
 }
 
 LANGUAGE_CODE = 'en-us'
