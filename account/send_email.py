@@ -6,7 +6,7 @@ def send_activation_email(email, code):
         'Здравствуйте, активируйте ваш аккаунт!',
         f'Для активации аккаунта нужно перейти по ссылке ниже:'
         f'\n{activation_url}',
-        'azkergeshov@gmail.com',
+        'akzergeshov@gmail.com',
         [email],
         fail_silently=False
     )
