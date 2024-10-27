@@ -6,5 +6,5 @@ router = DefaultRouter()
 router.register(r'genres', GenreViewSet)
 
 urlpatterns = [
-    path('api/', include(router.urls)),  # Включите маршруты из роутера
+    path('', include(router.urls)),  # Включите маршруты из роутера
 ]

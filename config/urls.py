@@ -10,7 +10,10 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('', include('artist.urls')),
     path('', include('genre.urls')),
-    path('api/', include('songs.urls')),
+    path('', include('songs.urls')),
+    path('', include('comment.urls')),
+    path('', include('favorite.urls')),
+
 
 ]
 
