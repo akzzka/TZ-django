@@ -1,12 +1,10 @@
-from rest_framework.routers import DefaultRouter
 from django.urls import path, include
-
+from rest_framework.routers import DefaultRouter
 from .views import ArtistViewsSet
 
 router = DefaultRouter()
-router.register('', ArtistViewsSet)
+router.register(r'artist', ArtistViewsSet)
 
 urlpatterns = [
-    path('api', include(router.urls)),
-
-     ]
+    path('/', include(router.urls)),  # Включите маршруты из роутера
+]
