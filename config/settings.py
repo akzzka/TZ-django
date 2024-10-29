@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'songs',
     'genre',
     'favorite',
+    'rating',
 ]
 
 MIDDLEWARE = [
