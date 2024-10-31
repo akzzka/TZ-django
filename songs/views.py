@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, viewsets
 from .models import Song
 from .serializers import SongSerializer
 from rest_framework.pagination import PageNumberPagination
@@ -15,13 +15,13 @@ class SongDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Song.objects.all()
     serializer_class = SongSerializer
 
-class SongPagination(PageNumberPagination):
-    page_size = 10
-    page_size_query_param = 'page_size'
-    max_page_size = 100
+
+class SongViewSet(viewsets.ModelViewSet):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
 
     @action(['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], detail=True)
-    def rating(self,request, pk):
+    def ratings(self, request, pk):
         song = self.get_object()
         user = request.user
 
@@ -38,7 +38,7 @@ class SongPagination(PageNumberPagination):
 
         elif request.method in ['PUT', 'PATCH']:
             if not song.ratings.filter(owner=user).exists():
-                return Response( 'Вы не оставляли рейтинг на этот товар', status=404)
+                return Response('Вы не оставляли рейтинг на этот товар', status=404)
             rating = song.ratings.get(owner=user)
             serializer = RatingSerializer(rating, data=request.data, partial=True)
             serializer.is_valid(raise_exception=True)
@@ -50,4 +50,10 @@ class SongPagination(PageNumberPagination):
                 return Response('Вы не оставляли рейтинг на этот товар', status=404)
             rating = song.ratings.get(owner=user)
             rating.delete()
-            return Response('Удалено',status=204)
+            return Response('Удалено', status=204)
+
+
+class SongPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
